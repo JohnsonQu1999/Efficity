@@ -2,7 +2,6 @@ import requests
 import serial
 from time import sleep
 
-# Use as default
 PORT = "/dev/tty96B0"
 API_WRITE_KEY = "0O4P5J4011DLCGJ9"
 
@@ -16,7 +15,6 @@ def set_serial(port):
     return comm
 
 def prepare_data(raw):
-    # split frames such that we discard incomplete frames
     if "\r\n" in raw:
         raw = raw.split("\r\n")
         print 'raw: '
